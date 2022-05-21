@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entendo o DOM - Collections </title>
+    <script>
+
+    </script>
+  </head>
+
+  <body>
+    <h1>Trabalhando com Collections</h1>
+
+    <div id="background">
+      <p>
+        Teste1
+      </p>
+      <p>
+        Teste2
+      </p>
+      <p>
+        Teste3
+      </p>
+    </div>
+    <button onclick="myFunction()">Clique!</button>
+    <button onclick="clearCode()">Clear</button>
+  </body>
+  <script>
+
+    function myFunction() {
+      const myCollection = document.getElementsByTagName("p");
+      for (let i = 0; i < myCollection.length; i++) {
+        myCollection[i].style.color = "red";
+        back();
+        // changeTime();
+
+      }
+    }
+
+    function back() {
+      const x = document.getElementById('background')
+      x.style.background = "yellow"
+    }
+
+    function changeTime() {
+      setTimeout(function () {
+        const x = document.getElementById('background')
+        x.style.background = "yellow"
+
+      }, 3000)
+    }
+
+    function clearCode() {
+      const x = document.getElementById('background')
+      x.style.background = "white"
+      const myCollection = document.getElementsByTagName("p");
+      for (let i = 0; i < myCollection.length; i++) {
+        myCollection[i].style.color = "black";
+
+      }
+
+
+
+    }
+
+  </script>
+
+</html>

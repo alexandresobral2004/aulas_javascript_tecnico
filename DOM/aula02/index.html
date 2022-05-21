@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02 - JavaScript DOM</title>
+    <script>
+
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <h2>Cadastro de usuários</h2>
+      <form id="form">
+        Nome:
+        <input type="text" name="" id="nome" onkeypress="exibeNome()"><br><br>
+        Idade:
+        <input type="text" name="" id="idade" onkeypress="exibeIdade()"><br><br>
+
+        <button id="enviar">Enviar</button>
+        <button id="reset" onkeydown="limparDados()">Limpar</button>
+      </form>
+      <hr>
+      Dados do Usuário:
+      <p id="exibe_nome"></p>
+      <p id="exibe_idade"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+
+</html>

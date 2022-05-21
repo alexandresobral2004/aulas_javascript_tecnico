@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <ol id="ol1">
+      <li>Item 1</li>
+    </ol>
+
+    <ul id="ul1">
+      <li>Item 1</li>
+
+    </ul>
+
+    <div id="evento1">
+      <h2>JavaScript HTML Events</h2>
+
+      <button onclick="changeText(this)">Clique aqui!</button>
+      <button onclick="changeText2(this)">Clique aqui!</button>
+      <hr>
+
+    </div>
+
+    <script>
+      var h2 = null;
+      function changeText(id) {
+        const h2 = document.createElement("h2");
+        const h2Text = document.createTextNode('Boa Tarde!')
+        h2.appendChild(h2Text);
+
+        const divGeral = document.getElementById("evento1");
+        divGeral.appendChild(h2);
+
+      }
+
+      function changeText2(id) {
+        const divGeral = document.getElementById("evento1");
+        const y = document.getElementsByTagName("h2")[1];
+        divGeral.removeChild(y);
+      }
+    </script>
+
+
+    <script>
+      const li = document.createElement("li");
+      const li2 = document.createElement("li");
+      const node_li = document.createTextNode("Item 2");
+
+      li.appendChild(node_li);
+
+
+      const element2 = document.getElementById("ol1");
+      const element3 = document.getElementById("ul1");
+
+      element2.appendChild(li);
+      element3.appendChild(li2)
+    </script>
+
+  </body>
+
+</html>

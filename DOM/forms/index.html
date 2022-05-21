@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Entendo o DOM - Collections - ADD E DEL </title>
+  </head>
+
+  <body>
+    <h1>Validação de Formulários</h1>
+    <div id="background">
+
+      <ol id="lista">
+
+      </ol>
+
+
+    </div>
+    <button onclick="Add()">Add</button>
+    <button onclick="Del()">Del</button>
+    <button onclick="gray()">Gray</button>
+    <button onclick="blue()">Blue</button>
+
+  </body>
+  <script>
+
+    function Add() {
+
+      const my_ol = document.getElementById("lista");
+      const my_li = document.createElement("li");
+      const my_text = document.createTextNode('Produto')
+      my_li.appendChild(my_text)
+      my_ol.appendChild(my_li);
+
+    }
+
+    function Del() {
+      const my_ol = document.getElementById("lista");
+      const tam = document.getElementsByTagName("li").length - 1;
+      const my_li = document.getElementsByTagName("li")[tam]
+      my_ol.removeChild(my_li);
+
+    }
+
+    function gray() {
+      const myCollection = document.getElementsByTagName("li");
+      console.log(myCollection)
+      for (let i = 0; i < myCollection.length; i++) {
+        if (myCollection[i].innerHTML != null) {
+          myCollection[i++].style.background = "#DFE0E2"
+        }
+      }
+    }
+
+    function blue() {
+      const myCollection = document.getElementsByTagName("li");
+      for (let i = 0; i < myCollection.length; i++) {
+        if (myCollection[i].innerHTML != null) {
+          myCollection[i++].style.background = "#00FFFF"
+        }
+      }
+    }
+
+
+  </script>
+
+</html>

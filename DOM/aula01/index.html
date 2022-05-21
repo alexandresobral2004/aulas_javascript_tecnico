@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Exemplo 1</title>
+
+
+  </head>
+  <script>
+    function validateForm() {
+      let x = document.forms["myForm"]["fname"].value;
+      let y = document.forms["myForm"]["femail"].value;
+      if (x == "") {
+        alert("Favor, digite seu nome!");
+        return false;
+      }
+      else if (y == "") {
+        alert("Favor, digite seu E-mail!");
+        return false;
+      }
+    }
+
+  </script>
+  </head>
+
+  <body>
+
+    <h2>JavaScript Validation</h2>
+
+    <form name="myForm" action="/action_page.php" onsubmit="validateForm()" method="post">
+
+      Name: <input type="text" name="fname">
+      <input type="submit" value="Submit"><br>
+      E-mail: <input type="text" name="femail">
+      <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h1 onclick="changeText(this)" id="teste">Click on this text!</h1>
+
+    <button onclick="changeAgain()">Reiniciar</button>
+    <!-- <h2 onclick="changeAgain()">Reiniciando</h2> -->
+
+    <script>
+      function changeText(id) {
+        id.innerHTML = "Ooops!";
+        id.style.backgroundColor = "Cyan";
+      }
+
+      function changeAgain() {
+        document.getElementById("teste").innerHTML = "Click on this text!";
+        document.getElementById("teste").style.backgroundColor = "orange";
+      }
+    </script>
+
+
+
+    <hr>
+    <h2>JavaScript HTML DOM</h2>
+    <p>Changing the HTML style:</p>
+
+
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+
+    <script>
+      document.getElementById("p2").style.color = "blue";
+      document.getElementById("p2").style.fontFamily = "Arial";
+      document.getElementById("p2").style.fontSize = "larger";
+    </script>
+    <hr>
+    <h2>JavaScript can Change HTML</h2>
+
+    <p id="p1">Hello World!</p>
+
+    <script>
+      document.getElementById("p1").innerHTML = "New text!";
+    </script>
+
+    <p>The paragraph above was changed by a script.</p>
+    <hr>
+    <br>
+    <p>Hello World!</p>
+
+    <p>Hello Norway!</p>
+
+    <p>Click the button to change the color of all p elements.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      function myFunction() {
+
+        const myNodelist = document.querySelectorAll("p");
+
+        for (let i = 0; i < myNodelist.length; i++) {
+          myNodelist[i].style.color = "red";
+          myNodelist[i].innerHTML = "***Olá***"
+
+        }
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Simple Page</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Validação de Formulários</h1>
+    </header>
+
+    <form action="" method="post" onsubmit="return false;">
+      <div id="id">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" class="field" id="namefield">
+        <br>
+        <br>
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" class="field">
+        <br>
+        <br>
+        <p id="msg">
+        </p>
+        <button onclick="send()" id="enviar">Enviar</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+    <script>
+      function send() {
+        // const valor = document.getElementById("namefield");
+        //style.color = "red";
+        const my_ol = document.getElementsByClassName("field");
+        const message = document.getElementById('msg')
+
+        for (i = 0; i < my_ol.length; i++) {
+          if (my_ol[i].name == 'nome') {
+            if (my_ol[i].value.length == 0 && message.children.length == 0) {
+              message.style.backgroundColor = '#FF7F50'
+              message.style.width = '200px'
+              const myLabel = document.createElement('label')
+              myLabel.style.color = 'black'
+              const texto = document.createTextNode('O nome n pode ser nulo')
+              myLabel.appendChild(texto)
+              message.appendChild(myLabel)
+
+            }
+            else {
+
+
+
+            }
+
+
+
+          }
+
+
+
+
+
+        }
+
+      }
+
+
+    </script>
+  </body>
+
+</html>
